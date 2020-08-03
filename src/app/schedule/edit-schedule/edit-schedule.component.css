@@ -1,0 +1,24 @@
+.right-container{
+    margin: 10px;
+}
+
+.text-small{
+    font-size: small;
+}
+
+.button-container{
+    margin:10px;
+    width: 100px;
+}
+
+.single-container{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.full-width-input{
+    width: 100%;
+}
+
+
+

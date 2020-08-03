@@ -1,0 +1,49 @@
+<div class="right-container">
+    <h3>
+        Edit Event
+    </h3>
+    <div class="single-container">
+        <mat-form-field class="full-width-input" hintLabel="Max 20 characters">
+            <input matInput maxlength="20" placeholder="Title  : " [(ngModel)]="title">
+            <!-- <mat-hint align="end">{{name.value?.length || 0}}/20</mat-hint> -->
+        </mat-form-field>
+    </div>
+
+    <div class="single-container">
+        <mat-form-field class="full-width-input">
+            <input matInput [(ngModel)]="startDate" [matDatepicker]="datePickerRef1" placeholder="Start Date" disabled>
+            <mat-datepicker-toggle matSuffix [for]="datePickerRef1"></mat-datepicker-toggle>
+            <mat-datepicker #datePickerRef1 disabled="false"></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="single-container">
+        <mat-form-field class="full-width-input">
+            <input matInput [(ngModel)]="endDate" [matDatepicker]="datePickerRef2" placeholder="End Date" disabled>
+            <mat-datepicker-toggle matSuffix [for]="datePickerRef2"></mat-datepicker-toggle>
+            <mat-datepicker #datePickerRef2 disabled="false"></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="single-container">
+        <mat-slide-toggle [checked]="wholeDay" [(ngModel)]="wholeDay" (change)="wholeDayChange($event)">Whole Day
+        </mat-slide-toggle>
+    </div>
+
+    <div class="single-container">
+        <div class="textsmall"> Start Time: </div>
+        <ngb-timepicker [(ngModel)]="startTimePicker" [seconds]="true" [spinners]="true" [meridian]="true" size="small" [disabled]="wholeDay">
+        </ngb-timepicker>
+    </div>
+
+    <div class="single-container">
+        <div class="textsmall"> End Time: </div>
+        <ngb-timepicker [(ngModel)]="endTimePicker" [seconds]="true" [spinners]="true" [meridian]="true" size="small" [disabled]="wholeDay">
+        </ngb-timepicker>
+    </div>
+
+    <div>
+        <button class="button-container" mat-raised-button (click)="cancel()">Cancel</button>
+        <button class="button-container" mat-raised-button (click)="validateEditSchedule()">Add</button>
+    </div>
+</div>

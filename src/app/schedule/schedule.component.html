@@ -1,0 +1,13 @@
+<mat-sidenav-container class="main-container" hasBackdrop="false">
+  <mat-sidenav-content>
+    <app-schedule-details></app-schedule-details>
+  </mat-sidenav-content>
+  <mat-sidenav mode="over" #sidenavright position="end" class="right-sidenav">
+    <ng-container *ngIf="addStatus">
+      <app-add-schedule></app-add-schedule>
+    </ng-container>
+    <ng-container *ngIf="editStatus">
+      <app-edit-schedule></app-edit-schedule>
+    </ng-container>
+  </mat-sidenav>
+</mat-sidenav-container>
